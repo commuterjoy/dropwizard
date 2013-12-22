@@ -6,6 +6,7 @@ import uk.co.chadburn.matt.story.resources.StoryResource;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
+import com.yammer.dropwizard.assets.AssetsBundle;
 import java.util.Map;
 import javax.ws.rs.core.MediaType;
 
@@ -17,6 +18,11 @@ public class StoryService extends Service<StoryConfiguration> {
 
   @Override
   public void initialize(Bootstrap<StoryConfiguration> bootstrap) {
+    bootstrap.setName("Story");
+
+    // static bundles
+    bootstrap.addBundle(new AssetsBundle("/assets/js", "/js"));
+    bootstrap.addBundle(new AssetsBundle("/assets/html", "/ui"));
   }
 
   @Override
@@ -25,10 +31,6 @@ public class StoryService extends Service<StoryConfiguration> {
     mediaTypeMap.put("json", MediaType.APPLICATION_JSON_TYPE);
     mediaTypeMap.put("xml", MediaType.APPLICATION_XML_TYPE);
 
-/*    String responseEntity = ClientBuilder.newClient()
-            .target("http://content.guardianapis.com").path("search")
-                        .request().get(String.class);
-*/
     if (config.testing != null && config.testing) {
       //turn on json pretty printing
       env.getObjectMapperFactory().enable(SerializationFeature.INDENT_OUTPUT);
