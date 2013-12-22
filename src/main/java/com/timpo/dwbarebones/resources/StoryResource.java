@@ -1,6 +1,9 @@
 package com.timpo.dwbarebones.resources;
 
-import com.timpo.dwbarebones.models.Model;
+import java.util.Arrays;
+import java.util.List;
+
+import com.timpo.dwbarebones.models.Story;
 import com.google.common.base.Optional;
 import com.yammer.metrics.annotation.Timed;
 
@@ -16,14 +19,17 @@ import javax.ws.rs.core.CacheControl;
 @Path("/")
 @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, MediaType.TEXT_HTML})
 @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, MediaType.TEXT_HTML})
-public class BarebonesResource {
+public class StoryResource {
 
+  //public Response index(@QueryParam("name") Optional<String> name) {
+  
   @GET
   @Timed
-  public Response index(@QueryParam("name") Optional<String> name) {
+  public List<Story> index(@QueryParam("name") Optional<String> name) {
     CacheControl cache = new CacheControl();
     cache.setMaxAge(600);
-
-    return Response.ok().cacheControl(cache).build();
+    //return Response.ok().cacheControl(cache).build();
+    return Arrays.asList(new Story("R v Grillo and Grillo",
+                "http://en.wikipedia.org/wiki/R_v_Grillo_and_Grillo"));
   }
 }
