@@ -31,7 +31,7 @@
               <outputDirectory>${basedir}/target/classes/assets</outputDirectory>
               <resources>
                 <resource>
-                  <directory>src/main/js/build</directory>
+                    <directory>target-grunt/</directory>
                   <filtering>true</filtering>
                 </resource>
               </resources>
