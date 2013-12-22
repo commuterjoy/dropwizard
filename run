@@ -1,2 +1,2 @@
 mvn clean package
-java -Ddw.http.port=9090 -jar target/DropWizardBarebones-1.0-SNAPSHOT.jar server
+java -Ddw.http.port=9090 -jar target/Story-1.0-SNAPSHOT.jar server
