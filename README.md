@@ -1,4 +1,5 @@
-DropWizardBarebones
-===================
+A sample DropWizard project
 
-the basic components common to my DropWizard projects
+```
+$ curl -i -H 'application/json' http://aqueous-bastion-6944.herokuapp.com
+```
