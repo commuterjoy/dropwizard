@@ -1,8 +1,8 @@
-package com.timpo.dwbarebones;
+package uk.co.chadburn.matt.story;
 
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.timpo.dwbarebones.conf.StoryConfiguration;
-import com.timpo.dwbarebones.resources.StoryResource;
+import uk.co.chadburn.matt.story.conf.StoryConfiguration;
+import uk.co.chadburn.matt.story.resources.StoryResource;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;

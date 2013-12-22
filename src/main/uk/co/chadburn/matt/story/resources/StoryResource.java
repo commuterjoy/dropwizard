@@ -1,9 +1,9 @@
-package com.timpo.dwbarebones.resources;
+package uk.co.chadburn.matt.story.resources;
 
 import java.util.Arrays;
 import java.util.List;
 
-import com.timpo.dwbarebones.models.Story;
+import uk.co.chadburn.matt.story.models.Story;
 import com.google.common.base.Optional;
 import com.yammer.metrics.annotation.Timed;
 
